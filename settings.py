@@ -45,7 +45,7 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = '/home/nicolas/www/thumbserver/static/'
+MEDIA_ROOT = '/home/admin/www/crowdstir.com/crowdstir/static/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -65,7 +65,7 @@ MEDIA_URL = '/static/'
 # URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
 # Examples: "http://foo.com/static/admin/", "/static/admin/".
-ADMIN_MEDIA_PREFIX = '/static/admin/'
+ADMIN_MEDIA_PREFIX = '/static/adminmedia/'
 
 # Additional locations of static files
 #STATICFILES_DIRS = (
@@ -102,7 +102,7 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'thumbserver.urls'
 
-TEMPLATE_DIRS = ('/home/nicolas/www/thumbserver/templates',)
+TEMPLATE_DIRS = ('/home/admin/www/thumbs.crowdstir.com/thumbserver/templates',)
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -117,6 +117,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'thumbserver.thumbserv',
     'sorl.thumbnail',
+    'gunicorn',
 
 )
 
@@ -143,4 +144,4 @@ LOGGING = {
     }
 }
 
-MEDIA_SERVER = "http://localhost:8000"
+MEDIA_SERVER = "http://media.crowdstir.com"
