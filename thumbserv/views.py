@@ -15,7 +15,7 @@ def renderimg(request):
 
     if name:
         try:
-            im = get_thumbnail('%s%s%s' % (settings.MEDIA_ROOT, 'images/', name),'%s' % xy, crop=crop, quality=qos )
+            im = get_thumbnail('%s%s' % (settings.MEDIA_ROOT, name),'%s' % xy, crop=crop, quality=qos )
             return  HttpResponse('%s%s%s' % (settings.MEDIA_SERVER, settings.MEDIA_URL, im.name) )
         except:
             raise
